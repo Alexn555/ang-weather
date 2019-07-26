@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import './app/modules/themes/basic';
+@import '~roboto-fontface/css/roboto/roboto-fontface.css';
+
+//material design icons
+$mdi-font-path: "~@mdi/font/fonts";
+@import "~@mdi/font/scss/materialdesignicons.scss";
+
+@mixin strechScreen($property) {
+  -webkit-background-size: $property;
+  -moz-background-size: $property;
+  -o-background-size: $property;
+  background-size: $property;
+}
+
+@mixin backgroundScreen($color1, $color2) {
+  background: -webkit-linear-gradient(to bottom left, $color1, $color2);
+  background: -moz-linear-gradient(to bottom left, $color1, $color2);
+  background: -ms-linear-gradient(to bottom left, $color1, $color2);
+  background: -o-linear-gradient(to bottom left, $color1, $color2);
+  background: linear-gradient(to bottom left, $color1, $color2);
+}
+
+body {
+  font-family: $page-main-font;
+  @include strechScreen(cover);
+  background-repeat:no-repeat;
+  @include backgroundScreen( $body-background-grd1, $body-background-grd2);
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-repeat:no-repeat;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+

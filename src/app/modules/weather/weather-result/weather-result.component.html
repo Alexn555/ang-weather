@@ -1,0 +1,41 @@
+
+<div class="page-container">
+
+  <app-loading-bar [isVisible]="weatherResultSearchStarted"></app-loading-bar>
+
+  <!-- Error details -->
+  <div class="weather-result-error" *ngIf="weatherResultError">
+    <h3>Error</h3>
+    <p> {{ weatherResultErrorMessage }} </p>
+
+    <div class="error">
+      <a (click)="restartSearch()">
+        <mat-icon class="mdi mdi-arrow-left" aria-hidden="true"></mat-icon>
+        <span> {{ 'weather.back' | translate }}</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Success details -->
+  <div class="weather-result-wrapper" *ngIf="!weatherResultError && weatherCurrentDay">
+    <div class="header">
+      <div class="header-back">
+        <a (click)="restartSearch()">
+          <mat-icon class="mdi mdi-arrow-left" aria-hidden="true"></mat-icon>
+          <span> {{ weatherCurrentDay.location }} </span>
+        </a>
+      </div>
+      <!-- Settings -->
+      <div class="header-settings">
+        <app-weather-settings [isVisible]="isSettingsOpen" (settingsApplied)="onSettingsChanged($event)"></app-weather-settings>
+      </div>
+    </div>
+
+    <app-weather-result-main [content]="weatherCurrentDay" [isMetric]="isMetric" [degreeSymbol]="degreeSymbol"></app-weather-result-main>
+
+    <app-weather-result-footer [content]="weatherWeek" [isMetric]="isMetric" [degreeSymbol]="degreeSymbol"></app-weather-result-footer>
+
+  </div>
+
+</div>
+

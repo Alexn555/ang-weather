@@ -1,0 +1,58 @@
+
+@import '../../themes/basic';
+@import '../../themes/container';
+
+a {
+  cursor: pointer;
+  text-decoration: $weather-link-decoration;
+}
+
+.weather-search-form {
+  padding: 10px;
+  margin: 50px;
+  text-align: center;
+  color: $page-text-color;
+}
+
+.weather-search-input {
+  @extend .centeredHortizontally;
+  padding: 5px;
+  width: 60%;
+  line-height: 0;
+
+  & input {
+    font-size: 20pt;
+
+    color: $page-text-color;
+    border-bottom: 2px solid #ccc;
+  }
+  & input:focus{
+    outline: none;
+  }
+}
+
+.weather-search-or {
+  @extend .centeredHortizontally;
+}
+
+.weather-coords {
+  @extend .centeredHortizontally;
+  & a {
+    border-bottom: 1px dashed #ccc;
+  }
+}
+
+// mobile view
+@media screen and (max-width: 800px) {
+   $form-input-width: 100%;
+
+  .weather-search-input {
+    width: $form-input-width;
+    text-align: right;
+  }
+
+  .weather-coords {
+    width: 100%;
+  }
+
+}

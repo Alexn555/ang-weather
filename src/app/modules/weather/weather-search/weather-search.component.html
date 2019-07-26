@@ -1,0 +1,26 @@
+
+<div class="page-container" *ngIf="!isResultVisible">
+
+  <div [formGroup]="weatherSeachForm" class="weather-search-form">
+      <div class="weather-search-input">
+          <input type="text" formControlName="city" placeholder="City"/>
+          <a (click)="searchWeather('city');">
+            <mat-icon class="mdi mdi-search-web" aria-hidden="true"></mat-icon>
+          </a>
+      </div>
+
+      <div class="weather-search-or">
+        or
+      </div>
+
+      <div class="weather-coords">
+        <span> use my <a (click)="getGeoLocation()">current position </a> </span>
+      </div>
+  </div>
+
+</div>
+
+<app-weather-result [searchInputCity]="searchCity"
+                    [searchInputCoords]="searchCoords"
+                    (searchBackApplied)="onRestartSearch($event)"
+                    *ngIf="isResultVisible"></app-weather-result>

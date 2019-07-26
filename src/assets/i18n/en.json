@@ -1,0 +1,14 @@
+{
+  "common": {
+    "searchBtn": "Search"
+  },
+  "weather": {
+    "minChars": "Please type min [3] chars",
+    "commonError": "Nothing found!",
+    "back": "to search page"
+  },
+  "error-page": {
+    "header": "404 Page not found",
+    "body": "Sorry, but we haven't found any page in this request."
+  }
+}

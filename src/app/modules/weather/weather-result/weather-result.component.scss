@@ -1,0 +1,68 @@
+
+@import '../../themes/basic';
+@import '../../themes/container';
+@import '../../themes/animations';
+
+a {
+  cursor: pointer;
+  text-decoration: $weather-link-decoration;
+}
+
+body {
+	font-family: Roboto, monospace;
+}
+
+.weather-result-error {
+  @extend .centeredHortizontally;
+  background: $form-result-error-background;
+  color: $form-result-error-color;
+}
+
+.weather-result-wrapper {
+  color: $form-result-color;
+  width: 100%;
+  min-height: 400px;
+  -webkit-animation: fadeIn $result-page-fade-in;
+  animation: fadeIn $result-page-fade-in;
+}
+
+.header {
+  width: 100%;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+}
+
+.header-back {
+  display: inline-block;
+  font-size: 22pt;
+  font-weight: bold;
+  text-align: left;
+  width: 60%;
+
+  & span {
+    padding-left: 13px;
+    color: $result-header-back;
+  }
+}
+
+.error-back{
+  color: fff;
+}
+
+.header-settings {
+  display: inline-block;
+  float: right;
+  width: 40%;
+}
+
+
+// mobile view
+@media screen and (max-width: 800px) {
+   $form-input-width: 60%;
+
+  .weather-result-data {
+    text-align: center;
+  }
+
+}

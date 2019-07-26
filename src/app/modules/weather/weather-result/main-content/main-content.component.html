@@ -1,0 +1,20 @@
+
+<div class="weather-main-content">
+  <h1> {{ content.fullDate }}</h1>
+  <h2> {{ content.weather }}</h2>
+
+  <div class="current-info">
+    <div class="current-degree">
+      <span> {{ content.temp }} {{ degreeSymbol }}</span>
+    </div>
+    <div class="current-weather-icon">
+      <mat-icon [ngClass]="content.iconClass" aria-hidden="true"></mat-icon>
+    </div>
+    <div class="current-day-temps">
+      <div *ngFor="let detail of content.details">
+        <div> {{ detail.timeTitle }} </div> <div> {{ detail.temp }}{{ degreeSymbol }}</div>
+      </div>
+    </div>
+
+  </div>
+</div>

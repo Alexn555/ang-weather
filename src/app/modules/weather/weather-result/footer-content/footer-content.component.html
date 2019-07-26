@@ -1,0 +1,13 @@
+
+<div class="weather-footer-content">
+    <div class="weather-day"  *ngFor="let day of content">
+      <h3> {{ day.weekDay }} </h3>
+      <div class="weather-icon">
+        <mat-icon [ngClass]="day.iconClass" aria-hidden="true"></mat-icon>
+      </div>
+      <div class="weather-degree">
+        {{ day.temp }}{{ degreeSymbol }}
+      </div>
+    </div>
+
+</div>

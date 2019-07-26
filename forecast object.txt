@@ -1,0 +1,20 @@
+ 
+  {
+    unit: metric,
+    location: Tallinn,
+    currentDay: {
+	date: '2019-07-25 12:00',
+        weekDay: 'Tuesday',
+        fullDate: '25th July 2019',
+        temp: 23,
+	weather: 'Cloudy' // from description
+	iconClass: 'cloud', // '04d' (mdi-weather-icon is used)
+        details: [
+	    { timeTitle: 'morning', temp: 15' }	//mor - 9:00, day - 12:00, evening - 18:00, night - 21:00
+        ]
+    }
+    week: [
+      { date: '2019-07-25', weekDay: 'Tueday', temp: 23, iconClass: '01d'}
+    ]
+
+  }

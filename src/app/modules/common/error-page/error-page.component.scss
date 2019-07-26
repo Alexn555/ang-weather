@@ -1,0 +1,7 @@
+
+@import '../../themes/basic';
+@import '../../themes/container';
+
+.error-page {
+  @extend .page-container;
+}
