@@ -1,4 +1,4 @@
-# Vatchecker
+# Weather checker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
@@ -29,7 +29,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
  3. Once installed to start application use cmd -> npm run start 
  4. Type localhost:4200 in browser 
  5. Type City and press search, you should see correct result (or error if not typed or result not found)
- 6. You can use last search results as quick type links
  
  Main structure 
  
