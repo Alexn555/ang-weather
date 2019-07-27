@@ -21,6 +21,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+ <img src="/weather.jpg" width="600" height="400" alt="Weather"/>
+
 ```
 ## Installation and usage
 
@@ -30,8 +33,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
  4. Type localhost:4200 in browser 
  5. Type City and press search, you should see correct result (or error if not typed or result not found)
  
- <img src="/weather.jpg" width="600" height="400" alt="Weather"/>
-
  
  Main structure 
  
