@@ -2,6 +2,7 @@ import {Component, OnInit, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
 import { CookieService } from 'ngx-cookie-service';
+import { NotifyService } from '@shared/services/notification.service';
 
 import { SAVE_ENABLE, MIN_SEACH_LENGTH } from '../weather.config';
 
@@ -21,6 +22,7 @@ export class WeatherSearchComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private translate: TranslateService,
+              private notfiyService: NotifyService,
               private cookieService: CookieService) {
     this.createSearchForm();
     translate.setDefaultLang('en');
@@ -49,7 +51,7 @@ export class WeatherSearchComponent implements OnInit {
   searchWeather(type: string) {
      this.searchCity = this.weatherSeachForm.value.city;
      if (type !== 'geolocation' && this.searchCity.length < MIN_SEACH_LENGTH) {
-       alert(' Please type some city or press my current position ');
+       this.notfiyService.error('Error', 'Please type some city or press my current position');
        return console.error('Please input city');
      }
      this.isResultVisible = true;
@@ -61,7 +63,7 @@ export class WeatherSearchComponent implements OnInit {
         this.getPosition(position);
       }, this.errorGeoLocation);
     } else {
-      console.warn('geolocation off');
+      this.notfiyService.warning('Error', 'Geo location off');
     }
   }
 
@@ -71,7 +73,7 @@ export class WeatherSearchComponent implements OnInit {
   }
 
   errorGeoLocation(err) {
-    console.warn(`Geo error (${err.code}): ${err.message}`);
+    this.notfiyService.error('Geo error', `Geo error (${err.code}): ${err.message}`);
   }
 
   onRestartSearch(event) {

@@ -10,6 +10,7 @@ import { WeatherSearchComponent } from '@weather/weather-search/weather-search.c
 import { WeatherResultComponent } from '@weather/weather-result/weather-result.component';
 import { WeatherMainContentComponent } from '@weather/weather-result/main-content/main-content.component';
 import { WeatherFooterContentComponent } from '@weather/weather-result/footer-content/footer-content.component';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { WeatherSettingsComponent } from './weather-result/settings/settings.component';
 import { WeatherService } from '@weather/weather.service';
@@ -28,6 +29,7 @@ import { WeatherService } from '@weather/weather.service';
     ReactiveFormsModule,
     HttpClientModule,
     TranslateModule,
+    SimpleNotificationsModule.forRoot(),
     CommonModule
   ],
   exports: [

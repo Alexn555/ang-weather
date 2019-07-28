@@ -7,7 +7,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  public notifyOptions;
+
   constructor() {
+    this.notifyOptions = {
+      position: ['middle', 'center']
+    };
   }
 
   ngOnInit(): void {
